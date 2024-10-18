@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Crypto App: Файл main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Crypto App
+   </div>
+   <div id="projectbrief">Приложение шифрования и дешифрования произвольных файлов</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle"><div class="title">Файл main.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;openssl/aes.h&gt;</code><br />
+<code>#include &lt;QApplication&gt;</code><br />
+<code>#include &lt;QWidget&gt;</code><br />
+<code>#include &lt;QPushButton&gt;</code><br />
+<code>#include &lt;QLineEdit&gt;</code><br />
+<code>#include &lt;QVBoxLayout&gt;</code><br />
+<code>#include &lt;QFileDialog&gt;</code><br />
+<code>#include &lt;QMessageBox&gt;</code><br />
+<code>#include &lt;QLabel&gt;</code><br />
+<code>#include &lt;QProgressBar&gt;</code><br />
+<code>#include &lt;QThread&gt;</code><br />
+<code>#include &lt;QFile&gt;</code><br />
+<code>#include &lt;openssl/evp.h&gt;</code><br />
+<code>#include &lt;openssl/rand.h&gt;</code><br />
+<code>#include &lt;QDebug&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &quot;main.moc&quot;</code><br />
+</div>
+<p><a href="main_8cpp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crypto_worker.html">CryptoWorker</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Класс для выполнения операций шифрования или дешифрования в отдельном потоке.  <a href="class_crypto_worker.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crypto_app.html">CryptoApp</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Основной класс приложения с графическим интерфейсом.  <a href="class_crypto_app.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a517c19bef1aee69916e7ffa3bb52210e" id="r_a517c19bef1aee69916e7ffa3bb52210e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a517c19bef1aee69916e7ffa3bb52210e">encryptFile</a> (const QString &amp;filePath, const QString &amp;password, QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a517c19bef1aee69916e7ffa3bb52210e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Шифрует файл с использованием AES-256-ECB.  <br /></td></tr>
+<tr class="separator:a517c19bef1aee69916e7ffa3bb52210e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3091bc37e2abb62371525cb8a4db4dfd" id="r_a3091bc37e2abb62371525cb8a4db4dfd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3091bc37e2abb62371525cb8a4db4dfd">decryptFile</a> (const QString &amp;filePath, const QString &amp;password, QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a3091bc37e2abb62371525cb8a4db4dfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Расшифровывает файл с использованием AES-256-ECB.  <br /></td></tr>
+<tr class="separator:a3091bc37e2abb62371525cb8a4db4dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97" id="r_a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a0ddf1224851353fc92bfbff6f499fa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Точка входа в приложение.  <br /></td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:a040cba714a7eee7e0c112892029749bd" id="r_a040cba714a7eee7e0c112892029749bd"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a040cba714a7eee7e0c112892029749bd">SALT_SIZE</a> = 16</td></tr>
+<tr class="separator:a040cba714a7eee7e0c112892029749bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a7891bf374ec665af983f34e5c56f0c" id="r_a7a7891bf374ec665af983f34e5c56f0c"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a7891bf374ec665af983f34e5c56f0c">IV_SIZE</a> = 16</td></tr>
+<tr class="separator:a7a7891bf374ec665af983f34e5c56f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3a0a347f1d5a8fd701cbe08f8618949" id="r_ae3a0a347f1d5a8fd701cbe08f8618949"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3a0a347f1d5a8fd701cbe08f8618949">KEY_SIZE</a> = 32</td></tr>
+<tr class="separator:ae3a0a347f1d5a8fd701cbe08f8618949"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="a3091bc37e2abb62371525cb8a4db4dfd" name="a3091bc37e2abb62371525cb8a4db4dfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3091bc37e2abb62371525cb8a4db4dfd">&#9670;&#160;</a></span>decryptFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool decryptFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>filePath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>password</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Расшифровывает файл с использованием AES-256-ECB. </p>
+<p>Функция извлекает соль из зашифрованного файла, использует её для генерации ключа на основе пароля пользователя с помощью PBKDF2, а затем расшифровывает данные, записанные в файл.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>Путь к файлу, который нужно расшифровать. </td></tr>
+    <tr><td class="paramname">password</td><td>Пароль для генерации ключа шифрования. </td></tr>
+    <tr><td class="paramname">parent</td><td>Указатель на родительский объект (по умолчанию nullptr). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если расшифровка прошла успешно. </dd>
+<dd>
+false, если произошла ошибка (например, неверный пароль или повреждённые данные).</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Функция использует AES-256-ECB без IV. В случае повреждённых данных или неверного пароля функция вернёт false.</dd></dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>Путь к файлу, который нужно расшифровать. </td></tr>
+    <tr><td class="paramname">password</td><td>Пароль для генерации ключа шифрования. </td></tr>
+    <tr><td class="paramname">parent</td><td>Указатель на родительский объект (по умолчанию nullptr). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если расшифровка прошла успешно. </dd>
+<dd>
+false, если произошла ошибка (например, неверный пароль или повреждённые данные). </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00245">245</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  245</span>                                                                                    {</div>
+<div class="line"><span class="lineno">  246</span>    QFile file(filePath);</div>
+<div class="line"><span class="lineno">  247</span>    <span class="keywordflow">if</span> (!file.open(QIODevice::ReadOnly)) {</div>
+<div class="line"><span class="lineno">  248</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Ошибка открытия файла для расшифровки&quot;</span>;</div>
+<div class="line"><span class="lineno">  249</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  250</span>    }</div>
+<div class="line"><span class="lineno">  251</span> </div>
+<div class="line"><span class="lineno">  252</span>    <span class="comment">// Чтение соли из файла</span></div>
+<div class="line"><span class="lineno">  253</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> salt[<a class="code hl_variable" href="#a040cba714a7eee7e0c112892029749bd">SALT_SIZE</a>];</div>
+<div class="line"><span class="lineno">  254</span>    <span class="keywordflow">if</span> (file.read(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(salt), <a class="code hl_variable" href="#a040cba714a7eee7e0c112892029749bd">SALT_SIZE</a>) != <a class="code hl_variable" href="#a040cba714a7eee7e0c112892029749bd">SALT_SIZE</a>) {</div>
+<div class="line"><span class="lineno">  255</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Ошибка чтения соли&quot;</span>;</div>
+<div class="line"><span class="lineno">  256</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  257</span>    }</div>
+<div class="line"><span class="lineno">  258</span> </div>
+<div class="line"><span class="lineno">  259</span>    <span class="comment">// Логируем соль для отладки</span></div>
+<div class="line"><span class="lineno">  260</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Соль (при расшифровке):&quot;</span> &lt;&lt; QByteArray(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(salt), <a class="code hl_variable" href="#a040cba714a7eee7e0c112892029749bd">SALT_SIZE</a>).toHex();</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>    <span class="comment">// Чтение зашифрованных данных</span></div>
+<div class="line"><span class="lineno">  263</span>    QByteArray encryptedData = file.readAll();</div>
+<div class="line"><span class="lineno">  264</span>    file.close();</div>
+<div class="line"><span class="lineno">  265</span> </div>
+<div class="line"><span class="lineno">  266</span>    <span class="comment">// Генерация ключа из пароля и соли</span></div>
+<div class="line"><span class="lineno">  267</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> key[<a class="code hl_variable" href="#ae3a0a347f1d5a8fd701cbe08f8618949">KEY_SIZE</a>];</div>
+<div class="line"><span class="lineno">  268</span>    <span class="keywordtype">int</span> iterations = 10000;</div>
+<div class="line"><span class="lineno">  269</span>    <span class="keywordflow">if</span> (!PKCS5_PBKDF2_HMAC(password.toUtf8().data(), password.size(), salt, <span class="keyword">sizeof</span>(salt), iterations, EVP_sha256(), <a class="code hl_variable" href="#ae3a0a347f1d5a8fd701cbe08f8618949">KEY_SIZE</a>, key)) {</div>
+<div class="line"><span class="lineno">  270</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Ошибка генерации ключа&quot;</span>;</div>
+<div class="line"><span class="lineno">  271</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  272</span>    }</div>
+<div class="line"><span class="lineno">  273</span> </div>
+<div class="line"><span class="lineno">  274</span>    <span class="comment">// Логируем ключ для отладки</span></div>
+<div class="line"><span class="lineno">  275</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Ключ (при расшифровке):&quot;</span> &lt;&lt; QByteArray(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(key), <a class="code hl_variable" href="#ae3a0a347f1d5a8fd701cbe08f8618949">KEY_SIZE</a>).toHex();</div>
+<div class="line"><span class="lineno">  276</span> </div>
+<div class="line"><span class="lineno">  277</span>    <span class="comment">// Инициализация расшифрования</span></div>
+<div class="line"><span class="lineno">  278</span>    EVP_CIPHER_CTX *ctx = EVP_CIPHER_CTX_new();</div>
+<div class="line"><span class="lineno">  279</span>    EVP_DecryptInit_ex(ctx, EVP_aes_256_ecb(), <span class="keyword">nullptr</span>, key, <span class="keyword">nullptr</span>);  <span class="comment">// AES-256-ECB, без IV</span></div>
+<div class="line"><span class="lineno">  280</span> </div>
+<div class="line"><span class="lineno">  281</span>    QByteArray decryptedData;</div>
+<div class="line"><span class="lineno">  282</span>    <span class="keywordtype">int</span> blockSize = encryptedData.size();  <span class="comment">// Размер буфера для расшифрованных данных</span></div>
+<div class="line"><span class="lineno">  283</span>    decryptedData.resize(blockSize);</div>
+<div class="line"><span class="lineno">  284</span> </div>
+<div class="line"><span class="lineno">  285</span>    <span class="keywordtype">int</span> out_len = 0, final_len = 0;</div>
+<div class="line"><span class="lineno">  286</span> </div>
+<div class="line"><span class="lineno">  287</span>    <span class="comment">// Расшифрование данных</span></div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordflow">if</span> (!EVP_DecryptUpdate(ctx, <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(decryptedData.data()), &amp;out_len,</div>
+<div class="line"><span class="lineno">  289</span>                           <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(encryptedData.data()), encryptedData.size())) {</div>
+<div class="line"><span class="lineno">  290</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Ошибка при расшифровке данных&quot;</span>;</div>
+<div class="line"><span class="lineno">  291</span>        EVP_CIPHER_CTX_free(ctx);</div>
+<div class="line"><span class="lineno">  292</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  293</span>    }</div>
+<div class="line"><span class="lineno">  294</span> </div>
+<div class="line"><span class="lineno">  295</span>    <span class="comment">// Финальный блок</span></div>
+<div class="line"><span class="lineno">  296</span>    <span class="keywordflow">if</span> (EVP_DecryptFinal_ex(ctx, <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(decryptedData.data()) + out_len, &amp;final_len) != 1) {</div>
+<div class="line"><span class="lineno">  297</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Ошибка при завершении расшифровки. Неверный пароль или поврежденные данные&quot;</span>;</div>
+<div class="line"><span class="lineno">  298</span>        EVP_CIPHER_CTX_free(ctx);</div>
+<div class="line"><span class="lineno">  299</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  300</span>    }</div>
+<div class="line"><span class="lineno">  301</span> </div>
+<div class="line"><span class="lineno">  302</span>    decryptedData.resize(out_len + final_len);  <span class="comment">// Обрезаем данные до корректного размера</span></div>
+<div class="line"><span class="lineno">  303</span> </div>
+<div class="line"><span class="lineno">  304</span>    EVP_CIPHER_CTX_free(ctx);</div>
+<div class="line"><span class="lineno">  305</span> </div>
+<div class="line"><span class="lineno">  306</span>    <span class="comment">// Открытие файла для записи расшифрованных данных</span></div>
+<div class="line"><span class="lineno">  307</span>    <span class="keywordflow">if</span> (!file.open(QIODevice::WriteOnly)) {</div>
+<div class="line"><span class="lineno">  308</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Ошибка открытия файла для записи расшифрованных данных&quot;</span>;</div>
+<div class="line"><span class="lineno">  309</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  310</span>    }</div>
+<div class="line"><span class="lineno">  311</span> </div>
+<div class="line"><span class="lineno">  312</span>    file.write(decryptedData);</div>
+<div class="line"><span class="lineno">  313</span>    file.close();</div>
+<div class="line"><span class="lineno">  314</span> </div>
+<div class="line"><span class="lineno">  315</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  316</span>}</div>
+<div class="ttc" id="amain_8cpp_html_a040cba714a7eee7e0c112892029749bd"><div class="ttname"><a href="#a040cba714a7eee7e0c112892029749bd">SALT_SIZE</a></div><div class="ttdeci">const int SALT_SIZE</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00019">main.cpp:19</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ae3a0a347f1d5a8fd701cbe08f8618949"><div class="ttname"><a href="#ae3a0a347f1d5a8fd701cbe08f8618949">KEY_SIZE</a></div><div class="ttdeci">const int KEY_SIZE</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00021">main.cpp:21</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a517c19bef1aee69916e7ffa3bb52210e" name="a517c19bef1aee69916e7ffa3bb52210e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a517c19bef1aee69916e7ffa3bb52210e">&#9670;&#160;</a></span>encryptFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool encryptFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>filePath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>password</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Шифрует файл с использованием AES-256-ECB. </p>
+<p>Функция генерирует случайную соль для шифрования, использует её для генерации ключа на основе пароля пользователя с использованием PBKDF2, а затем шифрует файл с использованием алгоритма AES-256-ECB. Зашифрованные данные записываются в файл.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>Путь к файлу, который нужно зашифровать. </td></tr>
+    <tr><td class="paramname">password</td><td>Пароль для генерации ключа шифрования. </td></tr>
+    <tr><td class="paramname">parent</td><td>Указатель на родительский объект (по умолчанию nullptr). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если шифрование прошло успешно. </dd>
+<dd>
+false, если произошла ошибка (например, не удалось открыть файл или сгенерировать ключ).</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Используется алгоритм AES-256-ECB без IV. Этот режим шифрования не обеспечивает защиту от атак на повторение блоков, поэтому рекомендуется использовать его только для простых случаев.</dd></dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>Путь к файлу, который нужно зашифровать. </td></tr>
+    <tr><td class="paramname">password</td><td>Пароль для генерации ключа шифрования. </td></tr>
+    <tr><td class="paramname">parent</td><td>Указатель на родительский объект (по умолчанию nullptr). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если шифрование прошло успешно. </dd>
+<dd>
+false, если произошла ошибка (например, не удалось открыть файл или сгенерировать ключ). </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00164">164</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  164</span>                                                                                    {</div>
+<div class="line"><span class="lineno">  165</span>    QFile file(filePath);</div>
+<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">if</span> (!file.open(QIODevice::ReadOnly)) {</div>
+<div class="line"><span class="lineno">  167</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Ошибка открытия файла для шифрования&quot;</span>;</div>
+<div class="line"><span class="lineno">  168</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  169</span>    }</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>    QByteArray fileData = file.readAll();</div>
+<div class="line"><span class="lineno">  172</span>    file.close();</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>    <span class="comment">// Генерация соли</span></div>
+<div class="line"><span class="lineno">  175</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> salt[<a class="code hl_variable" href="#a040cba714a7eee7e0c112892029749bd">SALT_SIZE</a>];</div>
+<div class="line"><span class="lineno">  176</span>    RAND_bytes(salt, <span class="keyword">sizeof</span>(salt));  <span class="comment">// Генерация случайной соли</span></div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>    <span class="comment">// Логируем соль для отладки</span></div>
+<div class="line"><span class="lineno">  179</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Соль:&quot;</span> &lt;&lt; QByteArray(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(salt), <a class="code hl_variable" href="#a040cba714a7eee7e0c112892029749bd">SALT_SIZE</a>).toHex();</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>    <span class="comment">// Генерация ключа из пароля и соли</span></div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> key[<a class="code hl_variable" href="#ae3a0a347f1d5a8fd701cbe08f8618949">KEY_SIZE</a>];</div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordtype">int</span> iterations = 10000;</div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">if</span> (!PKCS5_PBKDF2_HMAC(password.toUtf8().data(), password.size(), salt, <span class="keyword">sizeof</span>(salt), iterations, EVP_sha256(), <a class="code hl_variable" href="#ae3a0a347f1d5a8fd701cbe08f8618949">KEY_SIZE</a>, key)) {</div>
+<div class="line"><span class="lineno">  185</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Ошибка генерации ключа&quot;</span>;</div>
+<div class="line"><span class="lineno">  186</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  187</span>    }</div>
+<div class="line"><span class="lineno">  188</span> </div>
+<div class="line"><span class="lineno">  189</span>    <span class="comment">// Логируем ключ</span></div>
+<div class="line"><span class="lineno">  190</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;Ключ:&quot;</span> &lt;&lt; QByteArray(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(key), <a class="code hl_variable" href="#ae3a0a347f1d5a8fd701cbe08f8618949">KEY_SIZE</a>).toHex();</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>    <span class="comment">// Инициализация шифрования</span></div>
+<div class="line"><span class="lineno">  193</span>    EVP_CIPHER_CTX *ctx = EVP_CIPHER_CTX_new();</div>
+<div class="line"><span class="lineno">  194</span>    EVP_EncryptInit_ex(ctx, EVP_aes_256_ecb(), <span class="keyword">nullptr</span>, key, <span class="keyword">nullptr</span>);  <span class="comment">// AES-256-ECB, без IV</span></div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>    QByteArray encryptedData;</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordtype">int</span> blockSize = fileData.size() + AES_BLOCK_SIZE;  <span class="comment">// Добавляем запас на финальный блок</span></div>
+<div class="line"><span class="lineno">  198</span> </div>
+<div class="line"><span class="lineno">  199</span>    encryptedData.resize(blockSize);</div>
+<div class="line"><span class="lineno">  200</span> </div>
+<div class="line"><span class="lineno">  201</span>    <span class="keywordtype">int</span> out_len = 0, final_len = 0;</div>
+<div class="line"><span class="lineno">  202</span>    </div>
+<div class="line"><span class="lineno">  203</span>    <span class="comment">// Шифрование данных</span></div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">if</span> (!EVP_EncryptUpdate(ctx, <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(encryptedData.data()), &amp;out_len,</div>
+<div class="line"><span class="lineno">  205</span>                           <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(fileData.data()), fileData.size())) {</div>
+<div class="line"><span class="lineno">  206</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Ошибка при шифровании данных&quot;</span>;</div>
+<div class="line"><span class="lineno">  207</span>        EVP_CIPHER_CTX_free(ctx);</div>
+<div class="line"><span class="lineno">  208</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  209</span>    }</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <span class="comment">// Финальный блок</span></div>
+<div class="line"><span class="lineno">  212</span>    <span class="keywordflow">if</span> (!EVP_EncryptFinal_ex(ctx, <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(encryptedData.data()) + out_len, &amp;final_len)) {</div>
+<div class="line"><span class="lineno">  213</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Ошибка при завершении шифрования&quot;</span>;</div>
+<div class="line"><span class="lineno">  214</span>        EVP_CIPHER_CTX_free(ctx);</div>
+<div class="line"><span class="lineno">  215</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  216</span>    }</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>    encryptedData.resize(out_len + final_len);  <span class="comment">// Устанавливаем финальный размер зашифрованных данных</span></div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>    EVP_CIPHER_CTX_free(ctx);</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>    <span class="comment">// Открытие файла для записи зашифрованных данных</span></div>
+<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">if</span> (!file.open(QIODevice::WriteOnly)) {</div>
+<div class="line"><span class="lineno">  224</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Ошибка открытия файла для записи зашифрованных данных&quot;</span>;</div>
+<div class="line"><span class="lineno">  225</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  226</span>    }</div>
+<div class="line"><span class="lineno">  227</span> </div>
+<div class="line"><span class="lineno">  228</span>    <span class="comment">// Запись соли перед зашифрованными данными</span></div>
+<div class="line"><span class="lineno">  229</span>    file.write(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(salt), <a class="code hl_variable" href="#a040cba714a7eee7e0c112892029749bd">SALT_SIZE</a>);</div>
+<div class="line"><span class="lineno">  230</span>    file.write(encryptedData);</div>
+<div class="line"><span class="lineno">  231</span>    file.close();</div>
+<div class="line"><span class="lineno">  232</span> </div>
+<div class="line"><span class="lineno">  233</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  234</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>argv</em></span>[]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Точка входа в приложение. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Количество аргументов командной строки. </td></tr>
+    <tr><td class="paramname">argv</td><td>Массив аргументов командной строки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>int Код завершения программы. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00326">326</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  326</span>                                 {</div>
+<div class="line"><span class="lineno">  327</span>    QApplication app(argc, argv);</div>
+<div class="line"><span class="lineno">  328</span> </div>
+<div class="line"><span class="lineno">  329</span>    <a class="code hl_class" href="class_crypto_app.html">CryptoApp</a> window;</div>
+<div class="line"><span class="lineno">  330</span>    window.setWindowTitle(<span class="stringliteral">&quot;CryptoApp - Шифрование/Расшифрование файлов&quot;</span>);</div>
+<div class="line"><span class="lineno">  331</span>    window.resize(400, 200);</div>
+<div class="line"><span class="lineno">  332</span>    window.show();</div>
+<div class="line"><span class="lineno">  333</span> </div>
+<div class="line"><span class="lineno">  334</span>    <span class="keywordflow">return</span> app.exec();</div>
+<div class="line"><span class="lineno">  335</span>}</div>
+<div class="ttc" id="aclass_crypto_app_html"><div class="ttname"><a href="class_crypto_app.html">CryptoApp</a></div><div class="ttdoc">Основной класс приложения с графическим интерфейсом.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00112">main.cpp:112</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="a7a7891bf374ec665af983f34e5c56f0c" name="a7a7891bf374ec665af983f34e5c56f0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a7891bf374ec665af983f34e5c56f0c">&#9670;&#160;</a></span>IV_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int IV_SIZE = 16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Размер вектора инициализации (IV), если используется </p>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00020">20</a></p>
+
+</div>
+</div>
+<a id="ae3a0a347f1d5a8fd701cbe08f8618949" name="ae3a0a347f1d5a8fd701cbe08f8618949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3a0a347f1d5a8fd701cbe08f8618949">&#9670;&#160;</a></span>KEY_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int KEY_SIZE = 32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Размер ключа для AES-256 </p>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<a id="a040cba714a7eee7e0c112892029749bd" name="a040cba714a7eee7e0c112892029749bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a040cba714a7eee7e0c112892029749bd">&#9670;&#160;</a></span>SALT_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int SALT_SIZE = 16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Размер соли для шифрования </p>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00019">19</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

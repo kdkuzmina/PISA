@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Crypto App: Класс CryptoWorker</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Crypto App
+   </div>
+   <div id="projectbrief">Приложение шифрования и дешифрования произвольных файлов</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Открытые слоты</a> &#124;
+<a href="#signals">Сигналы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a> &#124;
+<a href="class_crypto_worker-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс CryptoWorker</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для выполнения операций шифрования или дешифрования в отдельном потоке.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф наследования:CryptoWorker:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_crypto_worker.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
+Открытые слоты</h2></td></tr>
+<tr class="memitem:aa96300bd65475af28b1601ecb76802c5" id="r_aa96300bd65475af28b1601ecb76802c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa96300bd65475af28b1601ecb76802c5">process</a> ()</td></tr>
+<tr class="memdesc:aa96300bd65475af28b1601ecb76802c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запускает процесс шифрования или дешифрования.  <br /></td></tr>
+<tr class="separator:aa96300bd65475af28b1601ecb76802c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:a6450b4fc303e969a9b5c734f8477e24b" id="r_a6450b4fc303e969a9b5c734f8477e24b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6450b4fc303e969a9b5c734f8477e24b">finished</a> (bool success)</td></tr>
+<tr class="memdesc:a6450b4fc303e969a9b5c734f8477e24b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сигнал для передачи завершения операции.  <br /></td></tr>
+<tr class="separator:a6450b4fc303e969a9b5c734f8477e24b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a14c5dc83d15ad7f4b2c6a7c98e392921" id="r_a14c5dc83d15ad7f4b2c6a7c98e392921"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14c5dc83d15ad7f4b2c6a7c98e392921">CryptoWorker</a> (const QString &amp;<a class="el" href="#a769f17d20854ec2986b8ad567c7cbd95">filePath</a>, const QString &amp;<a class="el" href="#aff2e266ac32080b19a518006bf2559d8">password</a>, bool <a class="el" href="#a3d0e99396183dcfbf1e443a21936a40a">encryptMode</a>)</td></tr>
+<tr class="memdesc:a14c5dc83d15ad7f4b2c6a7c98e392921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор класса <a class="el" href="class_crypto_worker.html" title="Класс для выполнения операций шифрования или дешифрования в отдельном потоке.">CryptoWorker</a>.  <br /></td></tr>
+<tr class="separator:a14c5dc83d15ad7f4b2c6a7c98e392921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a769f17d20854ec2986b8ad567c7cbd95" id="r_a769f17d20854ec2986b8ad567c7cbd95"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a769f17d20854ec2986b8ad567c7cbd95">filePath</a></td></tr>
+<tr class="separator:a769f17d20854ec2986b8ad567c7cbd95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff2e266ac32080b19a518006bf2559d8" id="r_aff2e266ac32080b19a518006bf2559d8"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff2e266ac32080b19a518006bf2559d8">password</a></td></tr>
+<tr class="separator:aff2e266ac32080b19a518006bf2559d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d0e99396183dcfbf1e443a21936a40a" id="r_a3d0e99396183dcfbf1e443a21936a40a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d0e99396183dcfbf1e443a21936a40a">encryptMode</a></td></tr>
+<tr class="separator:a3d0e99396183dcfbf1e443a21936a40a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс для выполнения операций шифрования или дешифрования в отдельном потоке. </p>
+<p>Класс запускает функцию шифрования или дешифрования файла в зависимости от переданного режима. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00065">65</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a14c5dc83d15ad7f4b2c6a7c98e392921" name="a14c5dc83d15ad7f4b2c6a7c98e392921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14c5dc83d15ad7f4b2c6a7c98e392921">&#9670;&#160;</a></span>CryptoWorker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CryptoWorker::CryptoWorker </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>filePath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>password</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>encryptMode</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор класса <a class="el" href="class_crypto_worker.html" title="Класс для выполнения операций шифрования или дешифрования в отдельном потоке.">CryptoWorker</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>Путь к файлу для шифрования/дешифрования. </td></tr>
+    <tr><td class="paramname">password</td><td>Пароль для генерации ключа шифрования. </td></tr>
+    <tr><td class="paramname">encryptMode</td><td>Указывает режим: true для шифрования, false для дешифрования. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00076">76</a></p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>        : <a class="code hl_variable" href="#a769f17d20854ec2986b8ad567c7cbd95">filePath</a>(<a class="code hl_variable" href="#a769f17d20854ec2986b8ad567c7cbd95">filePath</a>), <a class="code hl_variable" href="#aff2e266ac32080b19a518006bf2559d8">password</a>(<a class="code hl_variable" href="#aff2e266ac32080b19a518006bf2559d8">password</a>), <a class="code hl_variable" href="#a3d0e99396183dcfbf1e443a21936a40a">encryptMode</a>(<a class="code hl_variable" href="#a3d0e99396183dcfbf1e443a21936a40a">encryptMode</a>) {}</div>
+<div class="ttc" id="aclass_crypto_worker_html_a3d0e99396183dcfbf1e443a21936a40a"><div class="ttname"><a href="#a3d0e99396183dcfbf1e443a21936a40a">CryptoWorker::encryptMode</a></div><div class="ttdeci">bool encryptMode</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00101">main.cpp:101</a></div></div>
+<div class="ttc" id="aclass_crypto_worker_html_a769f17d20854ec2986b8ad567c7cbd95"><div class="ttname"><a href="#a769f17d20854ec2986b8ad567c7cbd95">CryptoWorker::filePath</a></div><div class="ttdeci">QString filePath</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00099">main.cpp:99</a></div></div>
+<div class="ttc" id="aclass_crypto_worker_html_aff2e266ac32080b19a518006bf2559d8"><div class="ttname"><a href="#aff2e266ac32080b19a518006bf2559d8">CryptoWorker::password</a></div><div class="ttdeci">QString password</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00100">main.cpp:100</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a6450b4fc303e969a9b5c734f8477e24b" name="a6450b4fc303e969a9b5c734f8477e24b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6450b4fc303e969a9b5c734f8477e24b">&#9670;&#160;</a></span>finished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CryptoWorker::finished </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>success</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сигнал для передачи завершения операции. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">success</td><td>true, если операция завершена успешно. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa96300bd65475af28b1601ecb76802c5" name="aa96300bd65475af28b1601ecb76802c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa96300bd65475af28b1601ecb76802c5">&#9670;&#160;</a></span>process</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CryptoWorker::process </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Запускает процесс шифрования или дешифрования. </p>
+<p>В зависимости от режима выполняет шифрование или дешифрование файла. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00093">93</a></p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>                   {</div>
+<div class="line"><span class="lineno">   94</span>        <span class="keywordtype">bool</span> result = <a class="code hl_variable" href="#a3d0e99396183dcfbf1e443a21936a40a">encryptMode</a> ? <a class="code hl_function" href="main_8cpp.html#a517c19bef1aee69916e7ffa3bb52210e">encryptFile</a>(<a class="code hl_variable" href="#a769f17d20854ec2986b8ad567c7cbd95">filePath</a>, <a class="code hl_variable" href="#aff2e266ac32080b19a518006bf2559d8">password</a>, <span class="keyword">this</span>) : <a class="code hl_function" href="main_8cpp.html#a3091bc37e2abb62371525cb8a4db4dfd">decryptFile</a>(<a class="code hl_variable" href="#a769f17d20854ec2986b8ad567c7cbd95">filePath</a>, <a class="code hl_variable" href="#aff2e266ac32080b19a518006bf2559d8">password</a>, this);</div>
+<div class="line"><span class="lineno">   95</span>        emit <a class="code hl_signal" href="#a6450b4fc303e969a9b5c734f8477e24b">finished</a>(result);  <span class="comment">// После завершения шифрования/дешифрования</span></div>
+<div class="line"><span class="lineno">   96</span>    }</div>
+<div class="ttc" id="aclass_crypto_worker_html_a6450b4fc303e969a9b5c734f8477e24b"><div class="ttname"><a href="#a6450b4fc303e969a9b5c734f8477e24b">CryptoWorker::finished</a></div><div class="ttdeci">void finished(bool success)</div><div class="ttdoc">Сигнал для передачи завершения операции.</div></div>
+<div class="ttc" id="amain_8cpp_html_a3091bc37e2abb62371525cb8a4db4dfd"><div class="ttname"><a href="main_8cpp.html#a3091bc37e2abb62371525cb8a4db4dfd">decryptFile</a></div><div class="ttdeci">bool decryptFile(const QString &amp;filePath, const QString &amp;password, QObject *parent=nullptr)</div><div class="ttdoc">Расшифровывает файл с использованием AES-256-ECB.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00245">main.cpp:245</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a517c19bef1aee69916e7ffa3bb52210e"><div class="ttname"><a href="main_8cpp.html#a517c19bef1aee69916e7ffa3bb52210e">encryptFile</a></div><div class="ttdeci">bool encryptFile(const QString &amp;filePath, const QString &amp;password, QObject *parent=nullptr)</div><div class="ttdoc">Шифрует файл с использованием AES-256-ECB.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00164">main.cpp:164</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="a3d0e99396183dcfbf1e443a21936a40a" name="a3d0e99396183dcfbf1e443a21936a40a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d0e99396183dcfbf1e443a21936a40a">&#9670;&#160;</a></span>encryptMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CryptoWorker::encryptMode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Режим: true для шифрования, false для дешифрования </p>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00101">101</a></p>
+
+</div>
+</div>
+<a id="a769f17d20854ec2986b8ad567c7cbd95" name="a769f17d20854ec2986b8ad567c7cbd95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a769f17d20854ec2986b8ad567c7cbd95">&#9670;&#160;</a></span>filePath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString CryptoWorker::filePath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Путь к файлу для шифрования/дешифрования </p>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00099">99</a></p>
+
+</div>
+</div>
+<a id="aff2e266ac32080b19a518006bf2559d8" name="aff2e266ac32080b19a518006bf2559d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff2e266ac32080b19a518006bf2559d8">&#9670;&#160;</a></span>password</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString CryptoWorker::password</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Пароль для генерации ключа </p>
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00100">100</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li><a class="el" href="main_8cpp_source.html">main.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>
